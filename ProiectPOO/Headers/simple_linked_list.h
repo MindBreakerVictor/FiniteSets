@@ -1,5 +1,5 @@
-#ifndef _SLL_H
-#define _SLL_H
+#ifndef SLL_H
+#define SLL_H
 
 #include "PCH.h"
 

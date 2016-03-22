@@ -19,17 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Headers\Finite.h" />
-    <ClInclude Include="Headers\FinitePairs.h" />
+    <ClInclude Include="Headers\FiniteSet.h" />
+    <ClInclude Include="Headers\FiniteSetPairs.h" />
     <ClInclude Include="Headers\Pair.h" />
     <ClInclude Include="Headers\PCH.h" />
     <ClInclude Include="Headers\simple_linked_list.h" />
-    <ClInclude Include="Headers\StackPairs.h" />
+    <ClInclude Include="Headers\PairsStack.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Headers\FinitePairs.cpp" />
+    <ClCompile Include="Headers\FiniteSetPairs.cpp" />
     <ClCompile Include="Headers\Pair.cpp" />
-    <ClCompile Include="Headers\StackPairs.cpp" />
+    <ClCompile Include="Headers\PairsStack.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -1,8 +1,8 @@
-#ifndef _PAIR_H
-#define _PAIR_H
+#ifndef PAIR_H
+#define PAIR_H
 
 #include "PCH.h"
-#include "Finite.h"
+#include "FiniteSet.h"
 
 class Pair
 {
@@ -21,7 +21,7 @@ class Pair
 		friend bool operator==(const Pair& pairOne, const Pair& pairTwo);
 		friend bool operator!=(const Pair& pairOne, const Pair& pairTwo) { return !(pairOne == pairTwo); }
 
-		friend class FinitePairs;
+		friend class FiniteSetPairs;
 
 	private:
 		int a, b;
