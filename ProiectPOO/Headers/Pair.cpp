@@ -1,6 +1,7 @@
+#include "PCH.h"
 #include "Pair.h"
 
-Pair& Pair::operator=(const Pair& source)
+Pair& Pair::operator=(Pair const& source)
 {
 	if (this == &source)
 		return *this;
@@ -11,13 +12,13 @@ Pair& Pair::operator=(const Pair& source)
 	return *this;
 }
 
-std::ostream& operator<<(std::ostream& os, const Pair& pair)
+std::ostream& operator<<(std::ostream& os, Pair const& pair)
 {
 	os << "(" << pair.a << ", " << pair.b << ")";
 	return os;
 }
 
-std::ofstream& operator<<(std::ofstream& ofs, const Pair& pair)
+std::ofstream& operator<<(std::ofstream& ofs, Pair const& pair)
 {
 	ofs << "(" << pair.a << ", " << pair.b << ")";
 	return ofs;
@@ -35,7 +36,3 @@ std::ifstream& operator>>(std::ifstream& ifs, Pair& pair)
 	return ifs;
 }
 
-bool operator==(const Pair& pairOne, const Pair& pairTwo)
-{
-	return (pairOne.a == pairTwo.a && pairOne.b == pairTwo.b);
-}

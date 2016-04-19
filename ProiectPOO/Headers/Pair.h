@@ -1,5 +1,4 @@
-#ifndef PAIR_H
-#define PAIR_H
+#pragma once
 
 #include "PCH.h"
 #include "FiniteSet.h"
@@ -8,18 +7,18 @@ class Pair
 {
 	public:
 		explicit Pair(int _a = 0, int _b = 0) : a(_a), b(_b) { }
-		Pair(const Pair& source) : a(source.a), b(source.b) { }
+		Pair(Pair const& source) : a(source.a), b(source.b) { }
 		~Pair() { }
 
-		Pair& operator=(const Pair& source);
+		Pair& operator=(Pair const& source);
 
-		friend std::ostream& operator<<(std::ostream& os, const Pair& pair);
-		friend std::ofstream& operator<<(std::ofstream& ofs, const Pair& pair);
+		friend std::ostream& operator<<(std::ostream& os, Pair const& pair);
+		friend std::ofstream& operator<<(std::ofstream& ofs, Pair const& pair);
 		friend std::istream& operator>>(std::istream& is, Pair& pair);
 		friend std::ifstream& operator>>(std::ifstream& ifs, Pair& pair);
 
-		friend bool operator==(const Pair& pairOne, const Pair& pairTwo);
-		friend bool operator!=(const Pair& pairOne, const Pair& pairTwo) { return !(pairOne == pairTwo); }
+		bool operator==(Pair const& pair) const { return (this->a == pair.a && this->b == pair.b); }
+		bool operator!=(Pair const& pair) const { return !(*this == pair); }
 
 		friend class FiniteSetPairs;
 
@@ -27,4 +26,3 @@ class Pair
 		int a, b;
 };
 
-#endif

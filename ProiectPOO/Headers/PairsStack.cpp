@@ -1,12 +1,13 @@
+#include "PCH.h"
 #include "PairsStack.h"
 
 std::istream& operator>>(std::istream& is, PairsStack& pairsStack)
 {
-	uint size;
+	uint32_t size;
 	is >> size;
 	pairsStack.size = size;
 
-	for (uint i = 0; i < size; i++)
+	for (uint32_t i = 0; i < size; i++)
 	{
 		Pair pair;
 		is >> pair;
@@ -18,11 +19,11 @@ std::istream& operator>>(std::istream& is, PairsStack& pairsStack)
 
 std::ifstream& operator>>(std::ifstream& ifs, PairsStack& pairsStack)
 {
-	uint size;
+	uint32_t size;
 	ifs >> size;
 	pairsStack.size = size;
 
-	for (uint i = 0; i < size; i++)
+	for (uint32_t i = 0; i < size; i++)
 	{
 		Pair pair;
 		ifs >> pair;
@@ -32,7 +33,7 @@ std::ifstream& operator>>(std::ifstream& ifs, PairsStack& pairsStack)
 	return ifs;
 }
 
-Pair PairsStack::top()
+Pair PairsStack::top() const
 {
 	if (isEmpty())
 		return Pair();
@@ -40,7 +41,7 @@ Pair PairsStack::top()
 	return list[0];
 }
 
-FiniteSetPairs PairsStack::getComplement(const FiniteSetPairs& finitePairs)
+FiniteSetPairs PairsStack::getComplement(FiniteSetPairs const& finitePairs) const
 {
 	PairsStack stack(*this);
 	FiniteSetPairs complement;
@@ -57,3 +58,4 @@ FiniteSetPairs PairsStack::getComplement(const FiniteSetPairs& finitePairs)
 
 	return complement;
 }
+

@@ -1,5 +1,4 @@
-#ifndef PCH_H
-#define PCH_H
+#pragma once
 
 #include <iostream>
 #include <fstream>
@@ -7,6 +6,3 @@
 #include <string>
 #include <assert.h>
 
-typedef unsigned int uint;
-
-#endif

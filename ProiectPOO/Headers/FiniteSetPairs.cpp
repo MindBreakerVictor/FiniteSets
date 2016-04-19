@@ -1,11 +1,12 @@
+#include "PCH.h"
 #include "FiniteSetPairs.h"
 #include "FiniteSet.h"
 
-FiniteSetPairs::FiniteSetPairs(const FiniteSet<int>& A, const FiniteSet<int>& B)
+FiniteSetPairs::FiniteSetPairs(FiniteSet<int> const& A, FiniteSet<int> const& B)
 {
-	for (uint i = 0; i < A.getCardinal(); i++)
+	for (uint32_t i = 0; i < A.getCardinal(); i++)
 	{
-		for (uint j = 0; j < B.getCardinal(); j++)
+		for (uint32_t j = 0; j < B.getCardinal(); j++)
 		{
 			Pair pair(A[i], B[j]);
 			list.pushBack(pair);
@@ -13,13 +14,13 @@ FiniteSetPairs::FiniteSetPairs(const FiniteSet<int>& A, const FiniteSet<int>& B)
 	}
 }
 
-void FiniteSetPairs::pushFront(Pair pair)
+void FiniteSetPairs::pushFront(Pair const& pair)
 {
 	list.pushFront(pair);
 	size++;
 }
 
-void FiniteSetPairs::pushBack(Pair pair)
+void FiniteSetPairs::pushBack(Pair const& pair)
 {
 	list.pushBack(pair);
 	size++;
@@ -37,13 +38,13 @@ void FiniteSetPairs::popBack()
 	size--;
 }
 
-void FiniteSetPairs::assignCartesianProduct(const FiniteSet<int>& A, const FiniteSet<int>& B)
+void FiniteSetPairs::assignCartesianProduct(FiniteSet<int> const& A, FiniteSet<int> const& B)
 {
 	list.~SimpleLinkedList();
 
-	for (uint i = 0; i < A.getCardinal(); i++)
+	for (uint32_t i = 0; i < A.getCardinal(); i++)
 	{
-		for (uint j = 0; j < B.getCardinal(); j++)
+		for (uint32_t j = 0; j < B.getCardinal(); j++)
 		{
 			Pair pair(A[i], B[j]);
 			pushBack(pair);
@@ -51,11 +52,11 @@ void FiniteSetPairs::assignCartesianProduct(const FiniteSet<int>& A, const Finit
 	}
 }
 
-FiniteSetPairs FiniteSetPairs::getComplement(const FiniteSetPairs& finitePairs)
+FiniteSetPairs FiniteSetPairs::getComplement(FiniteSetPairs const& finitePairs)
 {
 	FiniteSetPairs complement;
 
-	for (uint i = 0; i < size; i++)
+	for (uint32_t i = 0; i < size; i++)
 	{
 		Pair pair = (*this)[i];
 
@@ -66,17 +67,17 @@ FiniteSetPairs FiniteSetPairs::getComplement(const FiniteSetPairs& finitePairs)
 	return complement;
 }
 
-std::ostream& operator<<(std::ostream& os, const FiniteSetPairs& finitePairs)
+std::ostream& operator<<(std::ostream& os, FiniteSetPairs const& finitePairs)
 {
-	for (uint i = 0; i < finitePairs.size; i++)
+	for (uint32_t i = 0; i < finitePairs.size; i++)
 		os << finitePairs[i] << " ";
 	os << "\n";
 	return os;
 }
 
-std::ofstream& operator<<(std::ofstream& ofs, const FiniteSetPairs& finitePairs)
+std::ofstream& operator<<(std::ofstream& ofs, FiniteSetPairs const& finitePairs)
 {
-	for (uint i = 0; i < finitePairs.size; i++)
+	for (uint32_t i = 0; i < finitePairs.size; i++)
 		ofs << finitePairs[i] << " ";
 	ofs << "\n";
 	return ofs;
@@ -95,3 +96,4 @@ std::ifstream& operator>>(std::ifstream& ifs, FiniteSetPairs& finitePairs)
 	finitePairs.size = finitePairs.list.getSize();
 	return ifs;
 }
+

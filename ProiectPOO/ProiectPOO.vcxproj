@@ -22,14 +22,17 @@
     <ClInclude Include="Headers\FiniteSet.h" />
     <ClInclude Include="Headers\FiniteSetPairs.h" />
     <ClInclude Include="Headers\Pair.h" />
+    <ClInclude Include="Headers\PairsStack.h" />
     <ClInclude Include="Headers\PCH.h" />
     <ClInclude Include="Headers\simple_linked_list.h" />
-    <ClInclude Include="Headers\PairsStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Headers\FiniteSetPairs.cpp" />
     <ClCompile Include="Headers\Pair.cpp" />
     <ClCompile Include="Headers\PairsStack.cpp" />
+    <ClCompile Include="Headers\PCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -88,6 +91,9 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\Victor\Documents\Visual Studio 2015\Projects\ProiectPOO\ProiectPOO\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
